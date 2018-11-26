@@ -7,7 +7,7 @@ import java.time.DayOfWeek;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.ZoneOffset;
+import java.time.ZoneId;
 
 import static java.time.temporal.ChronoField.DAY_OF_MONTH;
 import static java.time.temporal.ChronoField.DAY_OF_WEEK;
@@ -69,6 +69,6 @@ public final class DayStatus {
     }
 
     private static LocalDateTime toLocalDate(final Instant instant) {
-        return LocalDateTime.ofInstant(instant, ZoneOffset.UTC);
+        return LocalDateTime.ofInstant(instant, ZoneId.systemDefault());
     }
 }
